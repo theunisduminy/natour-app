@@ -12,9 +12,6 @@ exports.aliasTopTours = (req, res, next) => {
 exports.getAllTours = async (req, res) => {
   try {
     // EXECUTE QUERY
-    console.log(
-      await Tour.find({ ratingsAverage: { $gte: 4.5 } }),
-    );
     const features = new APIFeatures(Tour.find(), req.query)
       .filter()
       .sort()
